@@ -15,7 +15,7 @@ zahl=0;
 filename="tabelle.csv";
 datei=path1+filename;
 files = os.listdir(path2);
-#bewertungstabelle auslesen
+#read table
 with open(datei) as csvfile:
     readCSV = reader(csvfile);
     for row in (readCSV):
@@ -27,15 +27,18 @@ with open(datei) as csvfile:
         matrikel=row[2];
         liste3.append(matrikel);
 		
-#dateien umbenennen			
+			
 for file in (files):
     zahl=0;
-    #match nach Name, kann aber mit matrikelnummer abgeglichen werden
-    for item in liste2:
-        
-        if re.match(item, file):
-       
+    #match nach Matrikel
+    
+    for item in liste3:
+      
+        if re.search(item, file):
+            
             newname=liste2[zahl]+"_"+liste1[zahl]+"_assignsubmission_file_"+str(zahl)+".pdf";
             
-            os.rename(os.path.join(path, file), os.path.join(path, newname))
+            os.rename(os.path.join(path2, file), os.path.join(path2, newname))
+            break
         zahl+=1
+            
