@@ -11,7 +11,7 @@ column 2: full name
 column 3: id number (Matrikelnummer)
 
 
-The Worksheet should be called table.csv.
+The Worksheet should be called tabelle.csv.
 
 The line  ids=ids.replace('Teilnehmer/in',''); should be adapted according to the language settings of your moodle course, e.g. Participant in english.
 
