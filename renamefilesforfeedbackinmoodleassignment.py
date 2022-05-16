@@ -3,12 +3,12 @@ import os
 import re
  # available in Python 2.5 and newer
 
-# input file path and name 
-#bewertungstabelle
-path1='C:\\Users/........../1/';
-#dateien
-path2='C:\\Users/............../2/';
-liste1=[]#ids
+#input file path and name 
+#grading worksheet
+path1='1/';
+#files to be renamed
+path2='2/';
+liste1=[]#ids used as part of the name of the files to be uploaded
 liste2=[]#namen
 liste3=[]#matrikelnummer
 zahl=0;
@@ -20,6 +20,7 @@ with open(datei) as csvfile:
     readCSV = reader(csvfile);
     for row in (readCSV):
         ids=row[0];
+        # use Participant in English or Word according to the language the moodle course is set to.
         ids=ids.replace('Teilnehmer/in','');
         liste1.append(ids);
         nam=row[1];
@@ -30,7 +31,7 @@ with open(datei) as csvfile:
 			
 for file in (files):
     zahl=0;
-    #match nach Matrikel
+    #match to id number / nach Matrikel
     
     for item in liste3:
       
