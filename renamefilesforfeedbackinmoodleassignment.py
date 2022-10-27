@@ -12,7 +12,7 @@ liste1=[]#ids used as part of the name of the files to be uploaded
 liste2=[]#namen
 liste3=[]#matrikelnummer
 zahl=0;
-filename="table.csv";
+filename="tabelle.csv";
 datei=path1+filename;
 files = os.listdir(path2);
 #read table
