@@ -9,18 +9,18 @@ path1='1/';
 #files to be renamed
 path2='2/';
 liste1=[]#ids used as part of the name of the files to be uploaded
-liste2=[]#namen
-liste3=[]#matrikelnummer
+liste2=[]#names
+liste3=[]#matrikelnummer, ids
 zahl=0;
 filename="tabelle.csv";
 datei=path1+filename;
 files = os.listdir(path2);
 #read table
-with open(datei) as csvfile:
+with open(datei,encoding='utf8') as csvfile:
     readCSV = reader(csvfile);
     for row in (readCSV):
-        matrikel=row[2];
-        ids=row[0];
+        matrikel=row[2]; #student id
+        ids=row[0]; #moodle assignment id
         nam=row[1];
 
    
